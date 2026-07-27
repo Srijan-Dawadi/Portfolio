@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Srijan Dawadi — Software Engineer from Nepal. Full-stack development, AI-assisted product building, and everything in between." />
+  <title>Srijan Dawadi | Software Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080810'/%3E%3Crect width='32' height='32' rx='8' fill='%237c6df0' fill-opacity='0.15'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='13' letter-spacing='-0.5' fill='%237c6df0'%3ESD%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== PAGE LOADER ==================== -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="page-loader-bar"></div>
+  </div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ==================== FLOATING NAV ==================== -->
+  <nav class="floating-nav" id="floatingNav" aria-label="Main navigation">
+    <div class="nav-pill">
+      <div class="nav-active-pill" id="navActivePill"></div>
+      <a href="#hero" class="nav-brand" aria-label="Back to top">
+        <span class="nav-brand-text">SD</span>
+      </a>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="#about" class="nav-link" data-section="about">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="nav-label">About</span>
+      </a>
+      <a href="#projects" class="nav-link" data-section="projects">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span class="nav-label">Projects</span>
+      </a>
+      <a href="#background" class="nav-link" data-section="background">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <span class="nav-label">Experience</span>
+      </a>
+      <a href="#contact" class="nav-link nav-cta" data-section="contact">
+        <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="nav-label">Let's Talk</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <!-- Particle canvas background -->
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-inner">
+      <!-- Left: text content -->
+      <div class="hero-text-col">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="hero-eyebrow-text">Software Developer &nbsp;&middot;&nbsp; Nepal</span>
+        </div>
+
+        <h1 class="hero-name" aria-label="Srijan Dawadi">
+          <span class="hero-name-first">Srijan</span>
+          <span class="hero-name-last">Dawadi</span>
+        </h1>
+
+        <p class="hero-tagline">
+          I enjoy building software that solves real-world problems through backend engineering and utilize AI in a productive way.
+        </p>
+
+        <div class="hero-meta">
+          <span class="hero-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bharatpur, Nepal
+          </span>
+          <span class="hero-meta-sep" aria-hidden="true">·</span>
+          <span class="hero-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            NEC Licensed Engineer
+          </span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn--primary" href="#projects">
+            <span>View Work</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          </a>
+          <a class="hero-btn hero-btn--secondary" href="Srijan_Dawadi_Resume.pdf" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: profile photo -->
+      <div class="hero-photo-col">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-card">
+            <img src="profile.jpeg" alt="Srijan Dawadi" class="hero-photo-img">
+            <div class="hero-photo-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="hero-availability">
+            <span class="badge-dot"></span>
+            Open to Work
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span class="hero-scroll-text">scroll</span>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section about" id="about">
+    <div class="container">
+
+      <div class="about-top anim-item">
+        <div class="about-heading-col">
+          <h2 class="about-heading">What I Do<span class="about-heading-dot">.</span></h2>
+        </div>
+        <div class="about-bio-col">
+          <p class="about-bio-text">
+            I'm a licensed computer engineer (NEC) based in Nepal who enjoys building backend systems and full-stack products from the ground up. I care more about understanding the problem and designing how a system should work than about any single framework. Most of my work involves Django, Next.js, and applying AI/ML where it actually solves a real problem. I'd rather ship a working product that real people use than build a perfect demo that nobody touches.
+          </p>
+        </div>
+      </div>
+
+      <!-- FULL WIDTH: Tech stack grid -->
+      <div class="about-stack anim-item">
+
+        <div class="about-stack-row">
+          <span class="about-stack-row-label">Backend</span>
+          <div class="about-stack-row-items">
+            <div class="about-stack-item">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="about-stack-item">
+              <i class="devicon-django-plain" style="color:#44b78b"></i>
+              <span>Django</span>
+            </div>
+            <div class="about-stack-item">
+              <span class="about-stack-item-dot"></span>
+              <span>DRF</span>
+            </div>
+            <div class="about-stack-item">
+              <span class="about-stack-item-dot"></span>
+              <span>WebSocket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stack-row">
+          <span class="about-stack-row-label">Frontend</span>
+          <div class="about-stack-row-items">
+            <div class="about-stack-item">
+              <i class="devicon-nextjs-plain"></i>
+              <span>Next.js</span>
+            </div>
+            <div class="about-stack-item">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="about-stack-item">
+              <i class="devicon-tailwindcss-plain colored"></i>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stack-row">
+          <span class="about-stack-row-label">Database</span>
+          <div class="about-stack-row-items">
+            <div class="about-stack-item">
+              <i class="devicon-postgresql-plain colored"></i>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stack-row">
+          <span class="about-stack-row-label">AI &amp; ML</span>
+          <div class="about-stack-row-items">
+            <div class="about-stack-item">
+              <i class="devicon-scikitlearn-plain colored"></i>
+              <span>Scikit-learn</span>
+            </div>
+            <div class="about-stack-item">
+              <i class="devicon-opencv-plain colored"></i>
+              <span>InsightFace</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stack-row">
+          <span class="about-stack-row-label">Tools</span>
+          <div class="about-stack-row-items">
+            <div class="about-stack-item">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <p class="section-eyebrow anim-item">Selected Work</p>
+
+      <div class="project-list">
+
+        <div class="project-row anim-item" data-modal="modal-perfectlink" data-preview="perfectlink1.png">
+          <div class="project-row-inner">
+            <div class="project-thumb">
+              <img src="perfectlink1.png" alt="PerfectLink screenshot" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-badge project-badge--live">Live</span>
+                <span class="project-badge project-badge--type">Full-Stack &middot; Team</span>
+              </div>
+              <h3 class="project-title">PerfectLink</h3>
+              <p class="project-desc">Nepal had no reliable platform connecting local service providers with buyers. We built one — with AI search, real-time chat, and payment workflows.</p>
+              <p class="project-metric">Live at perfectlink.com.np — production-ready, serving Nepal's local service marketplace</p>
+              <div class="project-tags">
+                <span>Django</span><span>DRF</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>WebSocket</span><span>AI Search</span>
+              </div>
+              <div class="project-links">
+                <a href="https://perfectlink.com.np" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Site
+                </a>
+                <a href="https://github.com/ankitpok/perfectLink" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+            <span class="project-arrow"><span class="project-arrow-text">View Details</span><span class="project-arrow-line"></span>&rarr;</span>
+          </div>
+        </div>
+
+        <div class="project-row anim-item" data-modal="modal-gym" data-preview="gym1.png">
+          <div class="project-row-inner">
+            <div class="project-thumb">
+              <img src="gym1.png" alt="Gym system screenshot" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-badge project-badge--live">Client Work</span>
+                <span class="project-badge project-badge--type">Full-Stack &middot; Solo</span>
+              </div>
+              <h3 class="project-title">Smart Gym + Cafe System</h3>
+              <p class="project-desc">A local gym was tracking attendance manually on paper. I replaced it with a full management platform — facial recognition check-in, billing, inventory, and admin dashboards.</p>
+              <p class="project-metric">Deployed for a paying client — handles 100+ daily facial check-ins using InsightFace</p>
+              <div class="project-tags">
+                <span>Python</span><span>Django</span><span>Computer Vision</span><span>InsightFace</span><span>ONNX</span><span>PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Srijan-Dawadi/GymWebApp" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+            <span class="project-arrow"><span class="project-arrow-text">View Details</span><span class="project-arrow-line"></span>&rarr;</span>
+          </div>
+        </div>
+
+        <div class="project-row anim-item" data-modal="modal-recommendation" data-preview="recommendation.png">
+          <div class="project-row-inner">
+            <div class="project-thumb">
+              <img src="recommendation.png" alt="Recommendation engine screenshot" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-badge project-badge--type">ML &middot; Solo</span>
+              </div>
+              <h3 class="project-title">E-Commerce Recommendation Engine</h3>
+              <p class="project-desc">Built a content-based filtering engine from scratch using NLP and cosine similarity — trained on 10,000 product descriptions with no ML framework abstraction, pure algorithmic implementation.</p>
+              <p class="project-metric">Trained and tested on 10,000 product descriptions from Kaggle</p>
+              <div class="project-tags">
+                <span>Python</span><span>Scikit-learn</span><span>NLP</span><span>Cosine Similarity</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ankitpok/AI-recommender" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+            <span class="project-arrow"><span class="project-arrow-text">View Details</span><span class="project-arrow-line"></span>&rarr;</span>
+          </div>
+        </div>
+
+        <div class="project-row anim-item" data-modal="modal-anomaly" data-preview="network-anamoly.png">
+          <div class="project-row-inner">
+            <div class="project-thumb">
+              <img src="network-anamoly.png" alt="Anomaly detection screenshot" loading="lazy" />
+            </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-badge project-badge--type">Deep Learning &middot; Solo</span>
+              </div>
+              <h3 class="project-title">Network Anomaly Detection</h3>
+              <p class="project-desc">Trained an unsupervised autoencoder to detect anomalous network traffic without labeled data — achieving 97–99% detection accuracy on the NSL-KDD dataset.</p>
+              <p class="project-metric">Achieved 97–99% detection accuracy on network traffic data</p>
+              <div class="project-tags">
+                <span>Python</span><span>TensorFlow</span><span>Autoencoder</span><span>Deep Learning</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Srijan-Dawadi" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+            <span class="project-arrow"><span class="project-arrow-text">View Details</span><span class="project-arrow-line"></span>&rarr;</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="project-preview" id="projectPreview">
+        <img src="" alt="" id="projectPreviewImg" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PROJECT MODALS ==================== -->
+
+  <!-- PerfectLink Modal -->
+  <div class="modal-overlay" id="modal-perfectlink">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-cover">
+        <img src="perfectlink1.png" alt="PerfectLink screenshot" loading="lazy" />
+      </div>
+      <div class="modal-header">
+        <h2 class="modal-title">PerfectLink</h2>
+        <p class="modal-subtitle">Service &amp; Product Marketplace &mdash; Nepal</p>
+        <div class="modal-header-tags">
+          <span>Django</span><span>DRF</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>WebSocket</span><span>AI Embeddings</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>The Problem</h3>
+          <p>Nepal had no reliable digital platform where local service providers — electricians, plumbers, tutors, designers — could list themselves and get found by buyers. Most work was through word-of-mouth, with no trust signals, no messaging, and no secure payment layer.</p>
+        </div>
+        <div class="modal-section">
+          <h3>My Role</h3>
+          <p>Co-built the full platform as part of a 2-person IT team for PerfectLink, a registered company in Nepal. I owned the backend architecture, the AI search pipeline, and the WebSocket messaging system.</p>
+        </div>
+        <div class="modal-section">
+          <h3>What I Built</h3>
+          <p>A full-stack marketplace with a Django REST backend organized into modular apps for accounts, listings, messaging, and payments. The frontend runs Next.js with TypeScript and server-side rendering for SEO. A WebSocket server handles real-time buyer-seller messaging and price negotiation, while an AI search pipeline uses embedding generation and semantic search to surface relevant listings — so a search for "fix my pipe" finds plumbers, not zero results. The platform also includes seller dashboards, a review and rating system, and payment integration points.</p>
+        </div>
+        <div class="modal-section">
+          <h3>Key Technical Decision</h3>
+          <p>Chose semantic search over keyword search from the start — a keyword search for "fix my pipe" would return zero results if sellers listed themselves as "plumber." Embedding-based search solved this and made the product actually usable for non-technical users.</p>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-outcome-label">Outcome</h4>
+          <p class="modal-outcome-text">Live at perfectlink.com.np — built and deployed by a 2-person team.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://perfectlink.com.np" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Live Site
+        </a>
+        <a href="https://github.com/ankitpok/perfectLink" target="_blank" rel="noreferrer" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          Source
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gym Modal -->
+  <div class="modal-overlay" id="modal-gym">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-cover">
+        <img src="gym1.png" alt="Gym system screenshot" loading="lazy" />
+      </div>
+      <div class="modal-header">
+        <h2 class="modal-title">Smart Gym + Cafe System</h2>
+        <p class="modal-subtitle">Freelance Client Project &mdash; Gym Management Platform</p>
+        <div class="modal-header-tags">
+          <span>Python</span><span>Django</span><span>InsightFace</span><span>ONNX</span><span>Computer Vision</span><span>PostgreSQL</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>The Problem</h3>
+          <p>A local gym was managing member attendance, subscriptions, and payments entirely on paper and spreadsheets. Staff were spending significant time on manual check-ins, and there was no visibility into who had paid, whose membership had expired, or daily inventory levels.</p>
+        </div>
+        <div class="modal-section">
+          <h3>My Role</h3>
+          <p>Solo freelance project — designed, built, and delivered the full system end-to-end for a paying client.</p>
+        </div>
+        <div class="modal-section">
+          <h3>What I Built</h3>
+          <p>A Django backend with separate apps for members, billing, attendance, inventory, and cafe management. Facial recognition attendance runs on InsightFace with liveness detection to prevent photo spoofing. Role-based authentication separates admin, staff, and member access levels. Payment recording includes an approval workflow with suspicious-activity flagging, and membership expiry automation keeps the system self-maintaining. Everything ties together through a centralized dashboard with full attendance history.</p>
+        </div>
+        <div class="modal-section">
+          <h3>Key Technical Decision</h3>
+          <p>Used InsightFace with ONNX runtime rather than a cloud face recognition API — kept all biometric data on the client's own server, which was a hard requirement for privacy and cost reasons. Added passive liveness detection to prevent photo spoofing attacks.</p>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-outcome-label">Outcome</h4>
+          <p class="modal-outcome-text">Delivered to a paying client — handles 100+ daily facial check-ins.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/Srijan-Dawadi/GymWebApp" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          View Source
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendation Engine Modal -->
+  <div class="modal-overlay" id="modal-recommendation">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-cover">
+        <img src="recommendation.png" alt="Recommendation engine screenshot" loading="lazy" />
+      </div>
+      <div class="modal-header">
+        <h2 class="modal-title">E-Commerce Recommendation Engine</h2>
+        <p class="modal-subtitle">Personal Project &mdash; ML &amp; NLP</p>
+        <div class="modal-header-tags">
+          <span>Python</span><span>Scikit-learn</span><span>NLP</span><span>Bag of Words</span><span>Cosine Similarity</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>The Problem</h3>
+          <p>E-commerce platforms rely on recommendation engines to drive engagement, but most implementations hide behind library abstractions. I wanted to build one from scratch to understand the algorithm layer — not just call a function that returns similar products.</p>
+        </div>
+        <div class="modal-section">
+          <h3>My Role</h3>
+          <p>Solo project — designed and implemented the full ML pipeline from data preprocessing to recommendation output.</p>
+        </div>
+        <div class="modal-section">
+          <h3>What I Built</h3>
+          <p>Text preprocessing and tokenization of product descriptions, converted into numerical feature vectors using Bag of Words vectorization. Cosine similarity is computed between all product vectors to find the closest matches, then results are ranked by similarity score and returned as a top-5 recommendation list.</p>
+        </div>
+        <div class="modal-section">
+          <h3>Key Technical Decision</h3>
+          <p>Used raw Bag of Words over TF-IDF intentionally — to understand why frequency-only representation loses context. That understanding directly informed the semantic search approach I used in PerfectLink, where embedding-based search solved this exact limitation.</p>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-outcome-label">Outcome</h4>
+          <p class="modal-outcome-text">Trained on 10,000 Kaggle products — produces relevant top-5 recommendations.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/ankitpok/AI-recommender" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          View Source
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anomaly Detection Modal -->
+  <div class="modal-overlay" id="modal-anomaly">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-cover">
+        <img src="network-anamoly.png" alt="Network anomaly detection screenshot" loading="lazy" />
+      </div>
+      <div class="modal-header">
+        <h2 class="modal-title">Network Anomaly Detection</h2>
+        <p class="modal-subtitle">Personal Project &mdash; Deep Learning &amp; Cybersecurity</p>
+        <div class="modal-header-tags">
+          <span>Python</span><span>TensorFlow</span><span>Autoencoder</span><span>Deep Learning</span><span>Network Security</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>The Problem</h3>
+          <p>Network intrusion detection systems typically rely on labeled attack data, which is expensive to collect and constantly outdated. I wanted to explore whether an unsupervised approach could detect anomalies without any attack labels — training only on what "normal" looks like.</p>
+        </div>
+        <div class="modal-section">
+          <h3>My Role</h3>
+          <p>Solo project — researched, implemented, and evaluated the full deep learning pipeline from data preparation to detection threshold tuning.</p>
+        </div>
+        <div class="modal-section">
+          <h3>What I Built</h3>
+          <p>An autoencoder that trains exclusively on normal network traffic, learning to compress and reconstruct benign patterns efficiently. When anomalous traffic flows through, the model produces a high reconstruction error — that error becomes the detection signal. A tuned threshold controls the tradeoff between false positives and missed threats, which is the core engineering challenge in any production anomaly detection system.</p>
+        </div>
+        <div class="modal-section">
+          <h3>Key Technical Decision</h3>
+          <p>The interesting challenge wasn't the model architecture — it was threshold selection. Too low and everything flags as an anomaly. Too high and real attacks slip through. This tradeoff is the core engineering problem in production anomaly detection systems.</p>
+        </div>
+        <div class="modal-section">
+          <h4 class="modal-outcome-label">Outcome</h4>
+          <p class="modal-outcome-text">97–99% detection accuracy on NSL-KDD — trained on normal traffic only.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/Srijan-Dawadi" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          View Source
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <section class="section" id="background">
+    <div class="container">
+
+      <p class="section-eyebrow anim-item">Background</p>
+
+      <!-- EXPERIENCE CARD -->
+      <div class="bg-exp-card anim-item">
+        <div class="bg-exp-left">
+          <span class="bg-exp-label">Experience</span>
+        </div>
+        <div class="bg-exp-right">
+          <div class="bg-exp-header">
+            <div class="bg-exp-title-row">
+              <img src="perfectlinklogo1.png" alt="PerfectLink" class="bg-exp-logo" />
+              <h3 class="bg-exp-company">PerfectLink</h3>
+              <span class="bg-exp-date">Aug 2025 &ndash; Present</span>
+            </div>
+            <div class="bg-exp-role-row">
+              <span class="bg-exp-role">Software Engineer</span>
+              <span class="bg-exp-badge">Founding Team</span>
+            </div>
+            <p class="bg-exp-context">Early-stage Startup &middot; Product Development</p>
+          </div>
+          <p class="bg-exp-desc">
+            Joined the founding engineering team to build an AI-powered local business platform. Contributed across backend development, database design, frontend implementation, product architecture, and AI-powered features.
+          </p>
+          <div class="bg-exp-contributions">
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Designed multi-role architecture enabling seamless switching between personal and business owner workspaces</span>
+            </div>
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Implemented semantic search and recommendation system using SBERT sentence embeddings for intelligent business and service discovery</span>
+            </div>
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Built complete booking workflows with backend validation, request management, and status tracking</span>
+            </div>
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Integrated OpenStreetMap for accurate business location management and location-based discovery</span>
+            </div>
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Developed responsive frontend interfaces for customer and business owner experiences</span>
+            </div>
+            <div class="bg-contrib-item">
+              <span class="bg-contrib-dot"></span>
+              <span>Collaborated with founding team to translate business requirements into scalable software solutions</span>
+            </div>
+          </div>
+          <div class="bg-exp-tags">
+            <span>Django</span><span>DRF</span><span>Next.js</span><span>PostgreSQL</span><span>WebSocket</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION GRID -->
+      <div class="bg-edu-grid">
+
+        <div class="bg-edu-card bg-edu-card--accent anim-item">
+          <div class="bg-edu-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span class="bg-edu-year">2026</span>
+          <h4 class="bg-edu-title">NEC Registered Computer Engineer</h4>
+          <p class="bg-edu-org">Nepal Engineering Council</p>
+          <p class="bg-edu-detail">Passed licensing exam &middot; July 2026</p>
+        </div>
+
+        <div class="bg-edu-card anim-item">
+          <div class="bg-edu-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <span class="bg-edu-year">2022 &ndash; 2026</span>
+          <h4 class="bg-edu-title">Bachelor's in Computer Engineering</h4>
+          <p class="bg-edu-org">United Technical College (Pokhara University)</p>
+          <p class="bg-edu-cgpa">CGPA: 3.76</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section" id="contact">
+    <div class="container">
+
+      <p class="section-eyebrow anim-item">Contact</p>
+      <h2 class="section-heading anim-item">Let's build something together.</h2>
+      <p class="contact-subtext anim-item">I usually respond within 24 hours. Whether it's a job opportunity, a freelance project, or just a question — feel free to reach out.</p>
+
+      <!-- Primary CTA Card -->
+      <div class="contact-primary anim-item">
+        <div class="contact-primary-top">
+          <span class="contact-availability">
+            <span class="badge-dot"></span>
+            Open to Work
+          </span>
+          <span class="contact-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bharatpur, Nepal · UTC+5:45
+          </span>
+        </div>
+        <div class="contact-primary-email">srijandawadi321@gmail.com</div>
+        <a href="mailto:srijandawadi321@gmail.com" class="contact-primary-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Send Email
+        </a>
+      </div>
+
+      <!-- Secondary Cards -->
+      <div class="contact-secondary">
+        <a href="https://www.linkedin.com/in/srijan-dawadi-bab018422/" target="_blank" rel="noreferrer" class="contact-card contact-card--secondary anim-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <h3>LinkedIn</h3>
+          <p>See my professional network</p>
+          <span class="contact-card-arrow">&rarr;</span>
+        </a>
+        <a href="https://github.com/Srijan-Dawadi" target="_blank" rel="noreferrer" class="contact-card contact-card--secondary anim-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <h3>GitHub</h3>
+          <p>View my code &amp; projects</p>
+          <span class="contact-card-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <p class="contact-footer-note anim-item">NEC Licensed · Available for remote &amp; on-site</p>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Srijan Dawadi</span>
+      <span class="footer-copy">&copy; <span id="year"></span> &mdash; All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
