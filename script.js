@@ -393,6 +393,7 @@ function openModal(modalId) {
   activeModal = modal;
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: true }, '');
 }
 
 function closeModal() {
@@ -407,9 +408,61 @@ projectRows.forEach(row => {
   row.style.cursor = 'pointer';
 });
 
-document.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeModal));
+// Close buttons (both sticky and fixed)
+document.querySelectorAll('.modal-close, .modal-close-fixed').forEach(btn => {
+  btn.addEventListener('click', closeModal);
+});
+
+// Close on overlay click
 modals.forEach(overlay => overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); }));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Close on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && activeModal) closeModal(); });
+
+// Close on browser back swipe (popstate)
+window.addEventListener('popstate', e => {
+  if (activeModal) {
+    closeModal();
+  }
+});
+
+// Swipe-down to dismiss on mobile
+modals.forEach(overlay => {
+  const modal = overlay.querySelector('.modal');
+  let startY = 0;
+  let currentY = 0;
+  let isDragging = false;
+
+  modal.addEventListener('touchstart', e => {
+    if (modal.scrollTop > 5) return; // don't hijack scroll if content is scrolled
+    startY = e.touches[0].clientY;
+    isDragging = true;
+    modal.style.transition = 'none';
+  }, { passive: true });
+
+  modal.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    currentY = e.touches[0].clientY;
+    const diff = currentY - startY;
+    if (diff > 0) {
+      modal.style.transform = `translateY(${diff}px)`;
+    }
+  }, { passive: true });
+
+  modal.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    modal.style.transition = '';
+    const diff = currentY - startY;
+    if (diff > 100) {
+      closeModal();
+    } else {
+      modal.style.transform = window.innerWidth <= 920 ? 'translateY(0)' : 'translateX(0)';
+    }
+    startY = 0;
+    currentY = 0;
+  });
+});
 
 /* ========================================
    PROJECT HOVER PREVIEW

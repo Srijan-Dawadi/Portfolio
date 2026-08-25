@@ -131,3 +131,12 @@
 - **CSS:** New classes — `.nav-brand`, `.nav-brand-text`, `.nav-sep`
 - **Mobile:** Separator margin reduced at 640px breakpoint
 - Active pill positioning unchanged — `getBoundingClientRect()` naturally accounts for brand offset
+
+### 10. Mobile Modal Fixes
+- **Fixed close button** — removed `float: right` (unreliable with `position: sticky` on mobile), used `margin-left: auto` instead
+- **Added drag handle** — small gray bar at top of bottom sheet on mobile (visual cue for swipe-to-dismiss)
+- **Added fixed close button (mobile)** — `.modal-close-fixed` positioned `fixed` at top-right, always visible, z-index 210. Hidden on desktop, shown on mobile
+- **Added swipe-down to dismiss** — touch gesture detection on `.modal`, swiping down >100px closes the modal. Only activates when content isn't scrolled
+- **Added `popstate` listener** — `openModal()` pushes history state, back swipe triggers `popstate` which closes modal instead of exiting site
+- **Desktop: hidden fixed button + drag handle** — `@media (min-width: 921px)` hides `.modal-close-fixed` and `.modal-drag-handle`
+- **HTML:** All 4 modals now have `.modal-drag-handle` + `.modal-close-fixed` elements

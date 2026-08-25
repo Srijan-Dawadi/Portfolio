@@ -1841,8 +1841,7 @@ img {
 .modal-close {
   position: sticky;
   top: 16px;
-  float: right;
-  margin: 16px 16px 0 0;
+  margin: 16px 16px 0 auto;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1856,6 +1855,7 @@ img {
   justify-content: center;
   transition: all 0.2s;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .modal-close:hover {
@@ -2144,6 +2144,59 @@ img {
     align-items: flex-end;
   }
 
+  /* Drag handle */
+  .modal-drag-handle {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 4px;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+    background: var(--bg-elevated);
+  }
+
+  .modal-drag-handle::after {
+    content: '';
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Fixed close button for mobile */
+  .modal-close-fixed {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    font-size: 22px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    z-index: 210;
+    transition: all 0.2s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .modal-close-fixed:hover,
+  .modal-close-fixed:active {
+    color: var(--text);
+    border-color: var(--border-hover);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Hide sticky close on mobile, show fixed instead */
+  .modal-close {
+    display: none;
+  }
+
   .modal-header {
     padding: var(--space-lg) var(--space-md) var(--space-md);
   }
@@ -2158,6 +2211,17 @@ img {
 
   .modal-cover {
     aspect-ratio: 16 / 10;
+  }
+}
+
+/* Desktop: hide fixed close + drag handle */
+@media (min-width: 921px) {
+  .modal-close-fixed {
+    display: none;
+  }
+
+  .modal-drag-handle {
+    display: none;
   }
 }
 
